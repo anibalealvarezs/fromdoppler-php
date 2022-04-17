@@ -15,7 +15,7 @@ class Configuration
     protected string $debugFile = 'php://output';
     protected string $tempFolderPath;
     protected int $timeout = 120;
-    private ListsApi $lists;
+    public ListsApi $lists;
 
     public function __construct()
     {
