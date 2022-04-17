@@ -121,7 +121,7 @@ trait ApiTrait
         $query = Query::build($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . '/account/'. $this->config->getAccount() . $resourcePath . ($query ? "?$query" : ''),
+            $this->config->getHost() . '/accounts/'. $this->config->getAccount() . $resourcePath . ($query ? "?$query" : ''),
             $headers,
             $httpBody
         );
@@ -132,7 +132,7 @@ trait ApiTrait
         $query = Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . '/account/'. $this->config->getAccount() . $resourcePath . ($query ? "?$query" : ''),
+            $this->config->getHost() . '/accounts/'. $this->config->getAccount() . $resourcePath . ($query ? "?$query" : ''),
             $headers,
             $httpBody
         );
@@ -143,7 +143,7 @@ trait ApiTrait
         $query = Query::build($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . '/account/'. $this->config->getAccount() . $resourcePath . ($query ? "?$query" : ''),
+            $this->config->getHost() . '/accounts/'. $this->config->getAccount() . $resourcePath . ($query ? "?$query" : ''),
             $headers,
             $httpBody
         );
@@ -154,7 +154,7 @@ trait ApiTrait
         $query = Query::build($queryParams);
         return new Request(
             'PATCH',
-            $this->config->getHost() . '/account/'. $this->config->getAccount() . $resourcePath . ($query ? "?$query" : ''),
+            $this->config->getHost() . '/accounts/'. $this->config->getAccount() . $resourcePath . ($query ? "?$query" : ''),
             $headers,
             $httpBody
         );
@@ -165,7 +165,7 @@ trait ApiTrait
         $query = Query::build($queryParams);
         return new Request(
             'PUT',
-            $this->config->getHost() . '/account/'. $this->config->getAccount() . $resourcePath . ($query ? "?$query" : ''),
+            $this->config->getHost() . '/accounts/'. $this->config->getAccount() . $resourcePath . ($query ? "?$query" : ''),
             $headers,
             $httpBody
         );
