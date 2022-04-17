@@ -11,3 +11,57 @@ PHP library to connect to the [FromDopple API](https://restapi.fromdoppler.com/d
 
   * PHP >= 8.0
   * Composer
+
+***
+
+## Installation
+
+Add the following to `composer.json`
+```json
+{
+  "require": {
+    "anibalealvarezs/fromdoppler-php": "*"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/anibalealvarezs/fromdoppler-php"
+    }
+  ]
+}
+```
+
+Install all composer dependencies using:
+```shell
+composer install
+```
+
+Or install it via GitHub
+```shell
+composer require anibalealvarezs/fromdoppler-php
+```
+
+## Quick Start
+
+### Note that this SDK requires PHP 8.0 or above.
+
+```php
+require_once('/path/to/FromDopplerPHP/vendor/autoload.php');
+
+$doppler = new FromDopplerPHP\ApiClient();
+
+$doppler->setConfig([
+  'apiKey' => 'YOUR_API_KEY',
+  'account' => 'YOUR_ACCOUNT', // email@email.com
+]);
+
+$response = $doppler->lists->getAllLists();
+print_r($response);
+```
+
+## Authentication Method
+
+The client library must be configured to use **Bearer Token**.
+
+## Other configuration options
+The APIClient class lets you set various configuration options like timeouts, host, user agent, and debug output.
