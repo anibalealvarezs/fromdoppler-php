@@ -183,7 +183,9 @@ trait ApiTrait
 
     protected function serializeParam(&$queryParams, $param, $key)
     {
-        $queryParams[$key] = ObjectSerializer::toQueryValue($param);
+        if ($param) {
+            $queryParams[$key] = ObjectSerializer::toQueryValue($param);
+        }
     }
 
     protected function pathParam(&$resourcePath, $key, $param)
