@@ -8,6 +8,7 @@ use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\TooManyRedirectsException;
+use GuzzleHttp\Psr7\Message;
 use GuzzleHttp\Psr7\Query;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
@@ -54,7 +55,6 @@ trait ApiTrait
     }
 
     /**
-     * @throws ApiException
      * @throws GuzzleException
      */
     protected function performRequest($request): mixed
@@ -80,10 +80,12 @@ trait ApiTrait
 
             return json_decode($response->getBody()->getContents());
 
+        } catch (ApiException $e) {
+            return $e->getMessage();
         } catch (ClientException | ServerException | TooManyRedirectsException $e) {
-            throw $e->getResponse();
+            return Message::toString($e->getResponse());
         } catch (ConnectException $e) {
-            throw $e->getRequest();
+            return Message::toString($e->getRequest());
         }
     }
 
