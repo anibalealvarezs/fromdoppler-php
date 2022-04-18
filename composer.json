@@ -31,11 +31,13 @@
     },
     "autoload": {
         "psr-4": {
-          "FromDopplerPHP\\": "src/"
+            "FromDopplerPHP\\": "src/"
         }
     },
     "autoload-dev": {
-      "psr-4": { "FromDopplerPHP\\" : "test/" }
+        "psr-4": {
+            "FromDopplerPHP\\": "test/"
+        }
     },
     "config": {
         "sort-packages": true
