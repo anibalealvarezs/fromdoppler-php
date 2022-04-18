@@ -194,8 +194,7 @@ class ListsApi
 
     public function getList($list_id)
     {
-        $response = $this->getListWithHttpInfo($list_id);
-        return $response;
+        return $this->getListWithHttpInfo($list_id);
     }
 
     public function getListWithHttpInfo($list_id)
@@ -393,8 +392,7 @@ class ListsApi
 
     public function createList($body)
     {
-        $response = $this->createListWithHttpInfo($body);
-        return $response;
+        return $this->createListWithHttpInfo($body);
     }
 
     public function createListWithHttpInfo($body)
