@@ -192,6 +192,35 @@ class ListsApi
         return $this->queryAndRequestPost($queryParams, $resourcePath, $headers, $httpBody);
     }
 
+    public function getSubscriber($email)
+    {
+        return $this->getSubscriberWithHttpInfo($email);
+    }
+
+    public function getSubscriberWithHttpInfo($email)
+    {
+        $request = $this->getSubscriberRequest($email);
+
+        return $this->performRequest($request);
+    }
+
+    protected function getSubscriberRequest($email): Request
+    {
+        // verify the required parameter 'body' is set
+        $this->checkRequiredParameter($email);
+
+        $resourcePath = '/subscribers/{email}';
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+
+        $this->pathParam($resourcePath, 'email', $email);
+
+        $headers = $this->setHeaders($headerParams);
+
+        return $this->queryAndRequestGet($queryParams, $resourcePath, $headers, $httpBody);
+    }
+
     public function getList($list_id)
     {
         return $this->getListWithHttpInfo($list_id);
